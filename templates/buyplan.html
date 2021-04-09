@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>plan</title>
+     <link rel="stylesheet" href="static/css/buyplan.css">
+</head>
+<body>
+<div class="sub-header">
+        <div class="sub-title">
+            Buy the best GreenHills oil
+        </div>
+    <div>
+        <img src="static/img/{{product_name}}.jpg" height="200px" width="200px">
+    </div>
+</div>
+
+<div class="small-title">
+
+</div>
+
+<div class="plan-container">
+
+    <div class="button-plan-container">
+        <div class="month-sub" style="left:10%">
+            3 months subscription
+        </div>
+        <div class="price">
+             <div class="price-sign">
+               ₹
+            </div>
+            <div class="price-amount">
+               399
+            </div>
+            <div class="price-month">
+               /month
+            </div>
+        </div>
+        {% if flag  %}
+       <a class="choose-plan" onclick="alterProductCb(3,'{{email}}','{{paid_date}}','{{product_name}}')">Choose Plan</a>
+        {% else %}
+         <a class="choose-plan" onclick="buyProductCb(3,'{{user.is_authenticated}}','{{product_name}}')">Choose Plan</a>
+
+        {% endif %}
+        <div class="plan-comment">
+            Billed as one payment of ₹999.95 every 3 months
+        </div>
+
+    </div>
+
+     <div class="button-plan-container">
+        <div class="month-sub">
+            6 months subscription
+        </div>
+        <div class="price">
+             <div class="price-sign">
+               ₹
+            </div>
+            <div class="price-amount">
+               399
+            </div>
+            <div class="price-month">
+               /month
+            </div>
+        </div>
+         {% if flag  %}
+        <a class="choose-plan" onclick="alterProductCb(6,'{{email}}','{{paid_date}}','{{product_name}}')">Choose Plan</a>
+        {% else %}
+        <a class="choose-plan" onclick="buyProductCb(6,'{{user.is_authenticated}}','{{product_name}}')">Choose Plan</a>
+       {% endif %}
+        <div class="plan-comment">
+            Billed as one payment of ₹2990.95 every 6 months
+        </div>
+
+    </div>
+
+     <div class="button-plan-container">
+        <div class="month-sub">
+            12 months subscription
+        </div>
+        <div class="price">
+             <div class="price-sign">
+               ₹
+            </div>
+            <div class="price-amount">
+               399
+            </div>
+            <div class="price-month">
+               /month
+            </div>
+        </div>
+           {% if flag  %}
+       <a class="choose-plan" onclick="alterProductCb(12,'{{email}}','{{paid_date}}','{{product_name}}')">Choose Plan</a>
+        {% else %}
+        <a class="choose-plan" onclick="buyProductCb(12,'{{user.is_authenticated}}','{{product_name}}')">Choose Plan</a>
+        {% endif %}
+         <div class="plan-comment">
+            Billed as one payment of ₹3990.95 every 12 months
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+<script src="static/js/buyplan.js"></script>
+</html>

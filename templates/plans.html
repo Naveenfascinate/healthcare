@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>plans</title>
+    <link rel="stylesheet" href="static/css/plans.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="plan-container">
+    {% for i in products %}
+    <div style="display:flex">
+        <div class="button-plan-container" >
+            <div class="month-sub" style="left:10%">
+                {{i.subscription}} months subscription
+            </div>
+            <div class="price" style="margin-bottom:5px">
+                 <div class="price-sign">
+                   ₹
+                </div>
+                <div class="price-amount">
+                   399
+                </div>
+                <div class="price-month">
+                   /month
+                </div>
+            </div>
+            <div style="left:50%;padding-left:70px">
+                <img src="static/img/{{i.product_name}}.jpg" width="100px" height="100px">
+            </div>
+            {% if i.expired%}
+            <a class="choose-plan" style=" background-color: red;">expired</a>
+            {% else %}
+             <a class="choose-plan">Active</a>
+
+            {% endif %}
+            <div class="plan-comment">
+                Billed as one payment of ₹999.95 every 3 months
+            </div>
+            <div style="font-size:20px;padding-left:70px;padding-top:5px">
+                {{i.expiry_date}}
+            </div>
+
+        </div>
+        {% if i.expired%}
+
+            {% else %}
+              <div style="padding-top:100px">
+                    <a  style="margin:10px" class="choose-plan" onclick="alterCb('True','{{i.email}}','{{i.paid_date}}','{{i.product_name}}')" >Alter</a>
+                    <a style="margin:10px" class="choose-plan" onclick="pauseCb(this)">Pause</a>
+                  <div style="display:none">
+                      <div style="padding:10px">
+                      <label>Pause For:</label>
+                      <input type="number" style="width:40px;margin-left:20px;margin-right:5px">
+                          <span>/month</span>
+                      </div>
+
+                      <button class="choose-plan" onclick='updateCb(this,"{{i.email}}","{{i.product_name}}")'>Update</button>
+
+                  </div>
+
+              </div>
+
+            {% endif %}
+
+    </div>
+    {% endfor %}
+</div>
+</body>
+<script src="static/js/plans.js"></script>
+</html>

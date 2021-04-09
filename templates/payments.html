@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>payments</title>
+    <link rel="stylesheet" href="static/css/payments.css">
+    <link rel="stylesheet" href="static/css/register.css">
+</head>
+<body>
+
+<form action="payments" method="post">
+   {% csrf_token %}
+  <div class="container">
+    <h1>GreenHills Payment Information</h1>
+    <hr>
+    <label for="country"><b>Country</b></label>
+    <input type="text" placeholder="Enter country" value="India" name="country" id="country" required>
+
+    <label for="cardnumber"><b>CardNumber</b></label>
+    <input type="text" placeholder="Enter cardNumber" value="1234-5678-9876" name="cardnumber" id="cardnumber" required>
+
+    <label for="expiry"><b>Expiry</b></label>
+    <input type="text" placeholder="MM/YY" name="expiry" value="12/27" id="expiry" required>
+
+    <label for="ccv"><b>CCV</b></label>
+    <input type="text" placeholder="ccv" name="ccv" value="999" id="ccv" required>
+
+      <input type="hidden" style="dispaly:none" value="{{user.email}}" name="email">
+      <input type="hidden" style="dispaly:none" value="{{month}}" name="month">
+      <input type="hidden" style="dispaly:none" value="{{product_name}}" name="product-name">
+      {% if flag %}
+         <input type="hidden" style="dispaly:none" value="{{flag}}" name="flag">
+         <input type="hidden" style="dispaly:none" value="{{paid_date}}" name="paid-date">
+      {% endif %}
+
+
+    <button type="submit" class="registerbtn" onclick="buyNowCb('{{user.email}}')">BuyNow</button>
+  </div>
+</form>
+</body>
+</html>

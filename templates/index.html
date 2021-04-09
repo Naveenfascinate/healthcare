@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fasci</title>
+    <link rel="stylesheet" href="static/css/index.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+<div class="search_bar_div " >
+    <div>
+        <label class="company-name">GreenHills</label>
+    </div>
+ <div class="autocomplete">
+    <input id="myInput" type="text" name="myCountry" class="search-bar" placeholder="Search Products">
+
+  </div>
+    <div class="menu-div">
+        {% if user.is_authenticated%}
+        <label style="color: white;font-size:20px">Hello,{{user.username}}</label>
+        <a class="header-menus" href="/userplans?email={{user.email}}">plans</a>
+        <a class="header-menus" href="/logout">Logout</a>
+        {% else %}
+         <a class="header-menus" href="/register">Register</a>
+         <a class="header-menus" href="/login">Login</a>
+        {% endif %}
+    </div>
+</div>
+
+    <div style="padding-top:10px">
+        <img src="static/img/gh1.jpg" id="banner-img">
+    </div>
+
+   <div  class="category-div">
+        <div style="padding-left: 22px">
+            <div onclick="productsCb('greenhills_oil')" class="products-oil">
+            <img src="static/img/gh2.jpg" width="200px" height="100px">
+            </div>
+            <div style="padding-left: 50px">GreenHills Oil
+                <h3>₹90/month</h3>
+            </div>
+
+        </div>
+       <div style="padding-left: 22px">
+            <div onclick="productsCb('cha_oil')" class="products-oil">
+            <img src="static/img/gh4.jpg" width="200px" height="100px"></div>
+            <div style="padding-left: 50px">CHA Oil
+             <h3>₹90/month</h3>
+            </div>
+        </div>
+       <div style="padding-left: 22px">
+            <div onclick="productsCb('greenhills_oil')" class="products-oil">
+            <img  src="static/img/gh2.jpg" width="200px" height="100px" ></div>
+            <div style="padding-left: 50px">GreenHills Oil
+             <h3>₹90/month</h3>
+            </div>
+        </div>
+       <div style="padding-left: 22px">
+            <div onclick="productsCb('cha_oil')" class="products-oil">
+            <img src="static/img/gh4.jpg" width="200px" height="100px"></div>
+            <div style="padding-left: 50px">CHA Oil
+             <h3>₹90/month</h3>
+            </div>
+        </div>
+       <div style="padding-left: 22px">
+            <div onclick="productsCb('greenhills_oil')" class="products-oil">
+            <img src="static/img/gh2.jpg" width="200px" height="100px"></div>
+            <div style="padding-left: 50px">Top Offers
+             <h3>₹90/month</h3>
+            </div>
+        </div>
+       <div style="padding-left: 22px">
+            <div>
+            <img src="static/img/gh4.jpg" width="200px" height="100px"></div>
+            <div style="padding-left: 50px">CHA Oil
+             <h3>₹90/month</h3>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+<script src="static/js/index.js"></script>
+</html>

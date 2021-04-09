@@ -1,0 +1,80 @@
+.plan-container{
+display:flex;
+padding-left:15%;
+}
+.button-plan-container{
+    width:280px;
+    height:300px;
+    border:1px solid grey;
+   background-color:light-grey;
+     margin-right:30px;
+}
+.month-sub{
+    padding-top:10px;
+    color: #02cc83;
+    font-size: 20px;
+    text-transform: lowercase;
+    margin-bottom: 0;
+    font-weight: 400;
+    display: block;
+    text-align: center;
+}
+.price{
+    margin-bottom: 35px;
+    height: 50px;
+    line-height: 50px;
+    text-align:center;
+}
+.price-sign{
+font-size:22px;text-align: center;display:inline-block;font-weight:400;line-height:50px;
+}
+.price-amount{
+font-size:38px;display:inline-block;font-weight:400;line-height:50px; text-align: center;
+}
+.price-month{
+font-size:15px;display:inline-block;font-weight:300;line-height:50px; text-align: center;
+}
+
+.choose-plan{
+    border-radius: 100px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 44px;
+    margin: 0 auto;
+    background-color: #02cc83;
+    width: 200px;
+    color:white;
+    box-shadow: 0 1px 2px grey;
+    display: block;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.plan-comment{
+    font-size: 11px;
+    color: #444;
+    margin-top: 10px;
+    max-width: 83%;
+    margin-left: 30px;
+    line-height: 17px;
+    font-weight: 300;
+    display: block;
+    text-align: center;
+}
+.sub-header{
+    padding: 33px 50px 7px 50px;
+    text-align: center;
+     display:block;
+     font-weight: 700;
+}
+.sub-title{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-align: center;
+    display:block;
+}
+
